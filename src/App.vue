@@ -7,9 +7,14 @@
 </template>
 
 <script>
-
+import {mapState} from 'vuex'
   export default {
-
+      created(){
+        this.$store.dispatch('loadProducts')
+      },
+      computed: mapState([
+        'prodcutsInBag'
+      ])
   }
   
 </script>
